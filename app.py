@@ -85,7 +85,7 @@ def renderHTML(data):
 </html>
 '''.format(html,json.dumps(data,ensure_ascii=False),js,css,title)
 app = Flask(__name__)
-images=json.loads(lzma.decompress(open("data.jsx").read()))["images"]
+images=json.loads(lzma.decompress(request.urlopen("https://github.com/i75ppa9/epio/raw/master/data.jsx").read()))["images"]
 jis=list(images.keys())
 def key(word):
   py=[[string.upper() for string in item] for item in lazy_pinyin(word)]
