@@ -43,9 +43,7 @@ html='''
         </v-list></v-col>
       </v-row>
       <v-container v-if="kind=='images'">
-        <v-lazy v-for="item in data_main" style="min-height:360px">
-          <v-img :lazy-src="loading_img" :src="item">
-        </v-lazy>
+        <v-img :lazy-src="loading_img" :src="item" v-for="item in data_main">
       </v-container>
     </v-card></v-app>
 '''
